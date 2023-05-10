@@ -16,7 +16,8 @@ public class FaceBookPage {
     public WebElement passwordTextBox;
 
     @FindBy (name="login")
-    public WebElement loginButton;
+    public WebElement loginButton ;
+
 
     @FindBy (className="_9ay7")
     public WebElement girilemediYaziElementi;
