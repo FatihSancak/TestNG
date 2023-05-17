@@ -26,7 +26,7 @@ public class C04_DependsOnMethod{
     }
     @Test
     public void test01() {
-        driver.get("http://www.aaaazon.com");
+        driver.get("http://www.aaamazon.com");
     }
 
     @Test (dependsOnMethods = "test01")
@@ -41,7 +41,7 @@ public class C04_DependsOnMethod{
         Assert.assertTrue(sonucYaziElementi.getText().contains("Nutella"));
     }
 
-    @Test
+    @Test(groups = {"grup1", "grup2"})
     public void test04() {
         System.out.println("Test04 çalıştı");
     }

@@ -1,0 +1,56 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--
+Bir XML dosyası ile projemizden istediğimiz testleri,
+package'ları class'ları veya test method'larını çalıştırılabilir
+
+Bunun için;
+gereken suite'den başlayıp test
+hiyerarşisine uygun olarak çalışacak
+tüm testleri XML formatında yazılmalıdır
+
+Eğer istenilen tüm testlere ulaşmak için
+birden fazla hiyerarşi oluşturmak gerekirse
+sonraki hiyerarşileri uygun adımdan başlatmak gerekir.
+
+Bir class'da tüm test method'ları çalışacaksa
+bunun için direk class seçmek yeterlidir.
+Method seçmemizin temel amacı class içindeki
+sadece belirli method'ların çalışması veya
+belirlenen methodlar dışındaki tüm methodların
+çalışmasıdır.
+
+Eğer
+çalışacak spesifik method'ları belirlemek istersek INCLUDE,
+çalışmayacak sepesifik method'ları belirlemek istersek EXCLUDE
+keyword'leri kullanılır.
+
+-> Methodlar dependsOnMethos ile birbirleri ile bağlanmışsas
+XML dosyası  çalışırken çelşiki oluşmaması lazım
+çelişki durumunda selenium testleri çalıştırmaz
+
+Suite tagının içineyazılacak verbose attribute'i
+konsolda çıkam mesajların daha az veya daha çok olmasını belirler
+1 - en az
+10 - en çok olarak bu aralıktaki değerleri alır.
+
+
+XML dosyalar çalıştırdığımız suite, test veya diğer seçenekleri
+bir göreve göre gruplandırma için de kullanılabilir.
+
+Bu durumda çalışacak tüm test method'larını veya class'ları
+tek tek XML dosyasına tanımlamak yerine framework'umuze istediğimiz
+gruplara dahil edilmelidir. Bunu yapabilmek için önce test method'larımızı
+istenilen gruplara dahil edilir.
+sonra XML dosyasına
+1. hangi gruplar çalışacak/çalışmayacak
+2. bu gruplar hangi package altında arancak
+
+-->
+<suite name="istenen class'lari çalıştırma">
+    <test name="classlar">
+        <classes>
+            <class name="tests.day16_Notations.C03_Priority"></class>
+            <class name="tests.day17_POM.C01_NewDriverFirstClass"></class>
+        </classes>
+    </test>
+</suite>
