@@ -9,11 +9,10 @@ public class BlueRentalCarsPage {
 
     public BlueRentalCarsPage(){
         PageFactory.initElements(Driver.getDriver(), this);
-
     }
 
     @FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
-    public WebElement ilkLoginButonu;
+    public WebElement ilkLogin;
 
     @FindBy(xpath="//input[@name='email']")
     public WebElement tbUserName;

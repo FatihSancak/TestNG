@@ -17,16 +17,16 @@ public class C06_SoftAssert extends TestBase {
         driver.get("https://www.amazon.com");
 
         // 2- title'in Amazon icerdigini test edin
-        String expectedTitle = "amazon";
+        String expectedTitle = "Amazon";
         String actualTitle = driver.getTitle();
-        softAssert.assertTrue(actualTitle.contains(expectedTitle),"Sayfa Başlığı Amazon içermiyor");
+        softAssert.assertTrue(actualTitle.contains(expectedTitle),"Sayfa Başlığı Amazon içeriyor");
 
         // 3- arama kutusunun erişilebilir oldugunu test edin
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
         softAssert.assertTrue(aramaKutusu.isEnabled(),"Arama Kutusuna Erişilemiyor");
 
         // 4- arama kutusuna nutella yazip oratin
-        aramaKutusu.sendKeys("kutella", Keys.ENTER);
+        aramaKutusu.sendKeys("Nutella", Keys.ENTER);
 
         // 5- arama yapildigini test edin
         WebElement sonucYazisi = driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));

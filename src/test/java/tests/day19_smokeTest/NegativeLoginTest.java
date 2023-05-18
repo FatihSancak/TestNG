@@ -16,7 +16,7 @@ public class NegativeLoginTest {
         Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
 
         // login butonuna bas
-        brc.ilkLoginButonu.click();
+        brc.ilkLogin.click();
 
         // test data useremail: test@test.com ,
         brc.tbUserName.sendKeys(ConfigReader.getProperty("brcValidEmail"));
@@ -41,7 +41,7 @@ public class NegativeLoginTest {
         Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
 
         // login butonuna bas
-        brc.ilkLoginButonu.click();
+        brc.ilkLogin.click();
 
         // test data useremail: test@test.com ,
         brc.tbUserName.sendKeys(ConfigReader.getProperty("brcWrongUserName"));
@@ -65,7 +65,7 @@ public class NegativeLoginTest {
         Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
 
         // login butonuna bas
-        brc.ilkLoginButonu.click();
+        brc.ilkLogin.click();
 
         // test data useremail: test@test.com ,
         brc.tbUserName.sendKeys(ConfigReader.getProperty("brcWrongEmail"));

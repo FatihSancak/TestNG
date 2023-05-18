@@ -2,6 +2,7 @@ package tests.day16_Notations;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -10,9 +11,8 @@ import utilities.TestBase;
 import java.util.List;
 
 public class C07_SoftAssert extends TestBase {
-
     @Test
-    public void test01() {
+    public void test01() throws InterruptedException {
         // 1. “http://zero.webappsecurity.com/” Adresine gidin
         driver.get("http://zero.webappsecurity.com/");
 
@@ -23,7 +23,7 @@ public class C07_SoftAssert extends TestBase {
         driver.findElement(By.id("user_login")).sendKeys("username");
 
         // 4. Password kutusuna “password” yazin
-        driver.findElement(By.id("user_password")).sendKeys("username");
+        driver.findElement(By.id("user_password")).sendKeys("password");
 
         // 5. Sign in tusuna basin
         driver.findElement(By.xpath("//input[@type='submit']")).click();
@@ -35,9 +35,11 @@ public class C07_SoftAssert extends TestBase {
 
         // 7. “Purchase Foreign Currency” tusuna basin
         driver.findElement(By.xpath("//li/a[@href='#ui-tabs-3']")).click();
+        Thread.sleep(2000);
+
 
         // 8. “Currency” drop down menusunden Eurozone’u secin
-        WebElement ddo = driver.findElement(By.xpath("//select[@id='pc_currency']"));
+        WebElement ddo = driver.findElement(By.xpath("//*[@id='pc_currency']"));
         Select select = new Select(ddo);
         select.selectByVisibleText("Eurozone (euro)");
 
@@ -45,12 +47,12 @@ public class C07_SoftAssert extends TestBase {
         SoftAssert softAssert = new SoftAssert();
         String secilenOption = select.getFirstSelectedOption().getText();
         String expectedOption = "Eurozone (Euro)";
-        softAssert.assertEquals(secilenOption,expectedOption,"Seçilen opiton uygun değil");
+        softAssert.assertEquals(secilenOption, expectedOption, "Seçilen opiton uygun değil");
 
         // 10.soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin
         List<WebElement> optionList = select.getOptions();
 
-       // List<String> optionListKontrol =
+        // List<String> optionListKontrol =
         // "Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)","China
 //        (yuan)","Denmark (krone)","Eurozone (euro)","Great Britain (pound)","Hong Kong
 //         (dollar)","Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand

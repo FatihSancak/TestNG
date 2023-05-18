@@ -16,7 +16,7 @@ public class C05_Assertinos extends TestBase {
         driver.get("https://www.amazon.com");
 
         // 2- title'in Amazon icerdigini test edin
-        String expectedTitle = "amazon";
+        String expectedTitle = "Amazon";
         String actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedTitle));
 
