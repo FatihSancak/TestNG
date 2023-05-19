@@ -1,6 +1,5 @@
 package tests.day22_CrossBrowser;
 
-import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
